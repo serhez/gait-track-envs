@@ -6,6 +6,7 @@ from . import half_cheetah_36_motor
 from . import half_cheetah_2seg
 from . import hopper
 from . import humanoid
+from . import unitree
 from . import template_renderer
 
 
@@ -26,5 +27,7 @@ def register_env(env_name):
         hopper.register_hopper()
     elif "Humanoid" in env_name:
         humanoid.register_humanoid(env_name)
+    elif "Unitree" in env_name:
+        unitree.register_unitree(env_name)    
     else:
         raise ValueError("Unknown env name: {}".format(env_name))
